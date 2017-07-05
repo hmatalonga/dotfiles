@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Before running this script:
-# sudo chrown -R hugo /usr/local
+# sudo chown -R hugo /usr/local
 
 mode=$1
 distro=$(lsb_release -s -c)
@@ -220,8 +220,8 @@ elif [[ $mode = "install" ]]; then
     read opt
     if [[ ${opt,,} = "y" ]]; then
         vagrant box add laravel/homestead
-        git clone https://github.com/laravel/homestead.git ~Apps/Homestead
-        bash Homestead/init.sh
+        git clone https://github.com/laravel/homestead.git ~/Apps/Homestead
+        bash ~/Apps/Homestead/init.sh
     fi
 
     # Clone dotfiles
