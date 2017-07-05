@@ -14,6 +14,14 @@ else
 	. "$BASH_SRC_PATH"/.ubuntu
 fi
 
+# Android path
+export ANDROID_HOME=/opt/android-sdk-linux/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# Composer
+export PATH=$PATH:$HOME/.composer/vendor/bin
+
+
 # edit this folder
 alias dot="cd ~/.dotfiles"
 # reload
