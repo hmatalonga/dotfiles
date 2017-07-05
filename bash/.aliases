@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# make aliases sudo-able
+alias sudo="sudo "
+
+# directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# some ls aliases
+alias la="ls -A"
+alias ll="ls -Al"
+alias lt="ls -haltr"
+
+# npm script shortcuts
+alias t="npm test"
+alias s="npm start"
+alias b="npm run build"
+alias d="npm run dev"
+alias dt="npm run dev:test"
+alias ds="npm run dev:ssr"
+alias nr="npm run"
+
+# blogging shortcuts
+alias hs="hexo server"
+alias hd="rm db.json && hexo generate && hexo deploy"
+alias blog="cd ~/Personal/blog && atom . && hexo server"
+
+# npm shortcuts that only list top-level modules
+alias l="yarn list --depth=0 2>/dev/null"
+alias lg="npm list -g --depth=0 2>/dev/null"
+
+# process finding
+alias pg="pgrep -lf"
+
+# network alias
+alias ports='netstat -tulanp'
+alias lookdevices='sudo nmap -sP 192.168.1.0/24'
+
+# Homestead ssh login
+alias vm='homestead ssh'
