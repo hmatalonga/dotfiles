@@ -44,7 +44,7 @@ elif [[ $mode = "install" ]]; then
     nvm alias default stable
 
     # Centralize global npm packages for different node versions
-    echo "prefix = /usr/local" > ~/.npmrc
+    echo "prefix = /opt/nvm" > ~/.npmrc
 
     # Install Node modules
     modules=(
