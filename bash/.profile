@@ -15,8 +15,8 @@ else
 fi
 
 # Android path
-export ANDROID_HOME=/opt/android-sdk-linux/
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
+export ANDROID_HOME=/opt/android-sdk-linux
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
 
 # Composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
@@ -25,4 +25,4 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 # edit this folder
 alias dot="cd ~/.dotfiles"
 # reload
-alias rl="source ~/.profile; echo '~/.profile reloaded.'"
+alias rl="source ~/.bashrc; echo '~/.bashrc reloaded.'"
