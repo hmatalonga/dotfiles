@@ -16,7 +16,7 @@ fi
 
 # Android path
 export ANDROID_HOME=/opt/android-sdk-linux/
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
 
 # Composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
