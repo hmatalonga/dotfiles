@@ -31,11 +31,7 @@ elif [[ $mode = "install" ]]; then
 
     # Some git defaults
     echo "Setting git defaults..."
-    git config --global color.ui true
-    git config --global core.editor nano
-    git config --global push.default simple
-    git config --global user.name "Hugo Matalonga"
-    git config --global user.email hugo@hmatalonga.com
+    cp git/.gitconfig ~
 
     # Install nvm
     echo "Installing nvm..."

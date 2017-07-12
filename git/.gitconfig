@@ -1,0 +1,27 @@
+[user]
+	name = Hugo Matalonga
+	email = hugo@hmatalonga.com
+[core]
+	editor = nano
+[alias]
+	amend = commit -a --amend
+	cm = !git add -A && git commit -m
+	co = checkout
+	cob = checkout -b
+	d = diff
+	dc = diff --cached
+	ds = diff --stat
+	# one-line log
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	# list aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	rao = remote add origin
+	s = status -s
+	save = !git add -A && git commit -m 'SAVEPOINT'
+	undo = reset HEAD~1 --mixed
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+[push]
+	default = simple
+[color]
+	ui = true
