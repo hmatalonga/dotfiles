@@ -35,6 +35,7 @@ elif [[ $mode = "install" ]]; then
 
     # Install nvm
     echo "Installing nvm..."
+    mkdir /opt/nvm
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
     nvm install stable
     nvm alias default stable
@@ -219,6 +220,9 @@ elif [[ $mode = "install" ]]; then
         git clone https://github.com/laravel/homestead.git ~/Apps/Homestead
         bash ~/Apps/Homestead/init.sh
     fi
+
+    # Go directory
+    mkdir /opt/go
 
     # Clone dotfiles
     git clone https://github.com/hmatalonga/dotfiles ~/.dotfiles

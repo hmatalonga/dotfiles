@@ -21,6 +21,10 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME
 # Composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
+# golang
+export GOPATH=/opt/go
+export PATH=$PATH:$GOPATH/bin
+
 
 # edit this folder
 alias dot="cd ~/.dotfiles"
