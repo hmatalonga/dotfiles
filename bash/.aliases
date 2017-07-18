@@ -39,8 +39,10 @@ alias pg="pgrep -lf"
 alias ports='netstat -tulanp'
 alias lookdevices='sudo nmap -sP 192.168.1.0/24'
 
-# Homestead ssh login
+# Homestead vm aliases
 alias vm='homestead ssh'
+alias vup='vagrant up'
+alias hup='homestead up'
 
 # open current folder from terminal
 alias o='caja . &'
