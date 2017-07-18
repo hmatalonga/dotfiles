@@ -30,3 +30,5 @@ export PATH=$PATH:$GOPATH/bin
 alias dot="cd ~/.dotfiles"
 # reload
 alias rl="source ~/.bashrc; echo '~/.bashrc reloaded.'"
+# reset repo folder
+alias rt="rm -rf ~/.dotfiles; git clone git@github.com:hmatalonga/dotfiles.git ~/.dotfiles; source ~/.bashrc"
