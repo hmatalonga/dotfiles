@@ -46,4 +46,4 @@ alias vm='homestead ssh'
 alias o='caja . &'
 
 # Run a local server
-alias server='browse http://localhost:8000 && python -m SimpleServerHTTP'
+alias server='browse http://localhost:8000 && python -m SimpleHTTPServer'
