@@ -10,6 +10,7 @@ tput sgr0
 LIGHTRED=$(tput setaf 9)
 ORANGE=$(tput setaf 172)
 PURPLE=$(tput setaf 141)
+BLUE=$(tput setaf 4)
 WHITE=$(tput setaf 256)
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
@@ -20,8 +21,8 @@ function git_info() {
 	# quickest check for what branch we're on
 	branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 	# check if it's dirty (via github.com/sindresorhus/pure)
-	dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
-	echo $RESET" on "$LIGHTRED$branch$dirty
+	dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "✗")
+	echo $BOLD$ORANGE" git:("$LIGHTRED$branch$ORANGE") $BLUE$dirty$RESET"
 }
 
 # Only show username/host if not default
@@ -42,4 +43,5 @@ function usernamehost() {
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]\$(usernamehost)\[$ORANGE\]\w\$(git_info)\[$RESET\]\n\$ "
+#PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]\$(usernamehost)\[$PURPLE\]\w\$(git_info)\[$RESET\]\n\$ "
+PS1="\[$BOLD$PURPLE\]\W\$(git_info)\[$RESET\]\n\$ "

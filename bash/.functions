@@ -83,7 +83,7 @@ extract () {
 
 # Custom functions
 function homestead() {
-    ( cd ~/Apps/Homestead && vagrant $* )
+    ( cd /opt/Homestead && vagrant $* )
 }
 
 function greenhubvm() {
