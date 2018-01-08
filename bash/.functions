@@ -88,7 +88,7 @@ function homestead() {
 
 function greenhubvm() {
     if [[ $1 == 'release' ]]; then
-      ssh server@193.136.66.17
+      ssh release
     else
       echo 'servername not found!'
     fi

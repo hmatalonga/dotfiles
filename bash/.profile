@@ -19,14 +19,14 @@ export ANDROID_HOME=/opt/android-sdk-linux
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
 
 # Composer
-export PATH=$PATH:$HOME/.config/composer/vendor/bin
+export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # golang
-export GOPATH=/opt/go
+export GOPATH=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 
 # JAVA HOME
-export JAVA_HOME='/usr/lib/jvm/default-java/bin'
+export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
 
 export NVM_DIR="/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -52,3 +52,6 @@ alias server='browse http://localhost:8000 && python -m SimpleHTTPServer'
 
 # Git shortland
 alias g='git'
+
+# Top
+alias top=vtop
