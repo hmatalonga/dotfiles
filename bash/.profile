@@ -22,8 +22,9 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
 # golang
-export GOPATH=/usr/local/go
-export PATH=$PATH:$GOPATH/bin
+mkdir -p $HOME/.go
+export GOPATH=$HOME/.go
+export PATH=$PATH:/usr/local/go/bin
 
 # JAVA HOME
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
