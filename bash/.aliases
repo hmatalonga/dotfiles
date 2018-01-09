@@ -5,6 +5,7 @@ alias sudo="sudo "
 
 # directory navigation
 alias ~="cd ~"
+alias dev="cd ~/Dev"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -27,7 +28,7 @@ alias nr="npm run"
 # blogging shortcuts
 alias ns="npm run dev"
 alias nd="npm run generate && npm run deploy"
-alias blog="cd ~/Personal/blog && atom . && npm run dev"
+alias blog="cd ~/Personal/blog && code . && npm run dev"
 
 # npm shortcuts that only list top-level modules
 alias l="yarn list --depth=0 2>/dev/null"
@@ -37,22 +38,20 @@ alias lg="npm list -g --depth=0 2>/dev/null"
 alias pg="pgrep -lf"
 
 # network alias
-alias ports='netstat -tulanp'
-alias lookdevices='sudo nmap -sP 192.168.1.0/24'
+alias ports="netstat -tulanp"
+alias lookdevices="sudo nmap -sP 192.168.1.0/24"
 
 # Homestead vm aliases
-alias vm='homestead ssh'
-alias vup='vagrant up'
-alias hup='homestead up'
+alias vm="homestead ssh"
+alias vup="vagrant up"
+alias hup="homestead up"
 
 # open current folder from terminal
-alias o='caja . &'
+alias o="caja . &"
 
 # Run a local server
-alias server='browse http://localhost:8000 && python -m SimpleHTTPServer'
+alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
 
-# Git shortland
-alias g='git'
-
-# Top
-alias top=vtop
+# Apps shorthands
+alias g="git"
+alias top="vtop"
