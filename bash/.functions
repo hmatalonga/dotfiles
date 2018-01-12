@@ -85,3 +85,12 @@ extract () {
 function homestead() {
     ( cd /opt/Homestead && vagrant $* )
 }
+
+function ff() {
+    if [ -z "$1" ]; then
+        echo "Missing path"
+    else
+        ( chmod -R 775 $1 )
+        ( chmod -R 775 $1/** )
+    fi
+}
