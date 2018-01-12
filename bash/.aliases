@@ -5,7 +5,6 @@ alias sudo="sudo "
 
 # directory navigation
 alias ~="cd ~"
-alias dev="cd ~/Dev"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
