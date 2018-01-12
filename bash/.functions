@@ -85,11 +85,3 @@ extract () {
 function homestead() {
     ( cd /opt/Homestead && vagrant $* )
 }
-
-function greenhubvm() {
-    if [[ $1 == 'release' ]]; then
-      ssh release
-    else
-      echo 'servername not found!'
-    fi
-}
