@@ -54,3 +54,4 @@ alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
 # Apps shorthands
 alias g="git"
 alias top="vtop"
+alias phpunit="vendor/bin/phpunit"
