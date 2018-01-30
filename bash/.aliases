@@ -46,7 +46,7 @@ alias vup="vagrant up"
 alias hup="homestead up"
 
 # open current folder from terminal
-alias o="caja . &"
+alias o="pantheon-files . &"
 
 # Run a local server
 alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
