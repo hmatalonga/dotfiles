@@ -26,6 +26,9 @@ mkdir -p $HOME/.go
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/go/bin
 
+# rustup
+export PATH=$PATH:$HOME/.cargo/bin
+
 # JAVA HOME
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
 
