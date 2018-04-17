@@ -22,7 +22,7 @@ function git_info() {
 	branch=$(git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||')
 	# check if it's dirty (via github.com/sindresorhus/pure)
 	dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "✗")
-	echo $BOLD$ORANGE" git:("$LIGHTRED$branch$ORANGE") $BLUE$dirty$RESET"
+	echo $BOLD$ORANGE" @"$branch" $BLUE$dirty$RESET"
 }
 
 # Only show username/host if not default
