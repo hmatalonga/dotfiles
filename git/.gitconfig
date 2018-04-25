@@ -1,8 +1,9 @@
 [user]
 	name = Hugo Matalonga
-	email = hugo@hmatalonga.com
+	email = hmatalonga@gmail.com
 [core]
-	editor = nano
+	editor = vi
+	excludesfile = ~/.dotfiles/git/.gitignore_global
 [alias]
 	amend = commit -a --amend
 	ec = config --global -e

@@ -4,7 +4,7 @@
 # sudo chown -R hugo /usr/local
 
 mode=$1
-distro=$(lsb_release -s -c)
+distro=$(lsb_release -cs)
 
 if [[ $mode = "init" ]]; then
     # make in case they aren't already there
@@ -27,11 +27,11 @@ elif [[ $mode = "install" ]]; then
 
     # generate ssh key
     echo "Generating ssh key..."
-    ssh-keygen -t rsa -b 4096 -C "hugo@hmatalonga.com"
+    ssh-keygen -t rsa -b 4096 -C "hmatalonga@gmail.com"
 
     # Some git defaults
     echo "Setting git defaults..."
-    cp git/.gitconfig ~
+    cp git/.* ~
 
     # Install nvm
     echo "Installing nvm..."
@@ -45,11 +45,13 @@ elif [[ $mode = "install" ]]; then
 
     # Install Node modules
     modules=(
-        bower
-        eslint
-        gulp
-        vue-cli
+        np
         yarn
+        vtop
+        surge
+        eslint
+        vue-cli
+        gitbook-cli
     )
 
     echo "installing node modules..."
@@ -99,7 +101,19 @@ elif [[ $mode = "install" ]]; then
     echo "Install Docker? (Y/n):"
     read opt
     if [[ ${opt,,} = "y" ]]; then
-        curl -fsSL https://get.docker.com/ | sh
+        sudo apt-get remove docker docker-engine docker.io
+        sudo apt-get install \
+            apt-transport-https \
+            ca-certificates \
+            curl \
+            software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo add-apt-repository \
+            "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+            $distro \
+            stable"
+        sudo apt-get update
+        sudo apt-get install docker-ce
         sudo usermod -aG docker $USER
     fi
 
@@ -115,7 +129,7 @@ elif [[ $mode = "install" ]]; then
         sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian $distro contrib"
         sudo apt-get update
         sudo apt-get install -y dkms
-        sudo apt-get install -y virtualbox-5.1
+        sudo apt-get install -y virtualbox-5.2
         sudo usermod -aG vboxusers $USER
     fi
 
@@ -138,48 +152,23 @@ elif [[ $mode = "install" ]]; then
     fi
 
     # Dev tools --if
-    echo "Install Development tools Atom and Vagrant? (Y/n):"
+    echo "Install Development tools VSCode and Vagrant? (Y/n):"
     read opt
     if [[ ${opt,,} = "y" ]]; then
         if [[ ! -d "$~/tmp" ]]; then
             mkdir ~/tmp
         fi
-        wget https://atom.io/download/deb -O ~/tmp/atom-deb64.deb
-        wget -P ~/tmp https://releases.hashicorp.com/vagrant/1.9.7/vagrant_1.9.7_x86_64.deb
+        wget https://go.microsoft.com/fwlink/?LinkID=760868 -O ~/tmp/vscode.deb
+        wget -P ~/tmp https://releases.hashicorp.com/vagrant/2.0.4/vagrant_2.0.4_x86_64.deb
         sudo dpkg -i ~/tmp/*.deb
-
-        packages=(
-            advanced-open-file
-            atom-beautify
-            attom-css-comb
-            auto-detect-indentation
-            autocomplete-python
-            busy-signal
-            dockblockr
-            editorconfig
-            emmet
-            file-icons
-            git-plus
-            go-plus
-            hyperclick
-            language-vue
-            linter
-            linter-eslint
-            merge-conflicts
-            minimap
-            pigments
-            sort-lines
-        )
-
-        apm install ${packages[@]}
     fi
 
 
-    # intellij, pycharm or webstorm --if
+    # PhpStorm --if
     echo "Download PhpStorm? (Y/n):"
     read opt
     if [[ ${opt,,} = "y" ]]; then
-        wget -P ~/Downloads https://download.jetbrains.com/webide/PhpStorm-2017.1.4.tar.gz
+        wget -P ~/Downloads https://download.jetbrains.com/webide/PhpStorm-2018.1.2.tar.gz
     fi
 
     # Laptop battery tools
@@ -208,28 +197,23 @@ elif [[ $mode = "install" ]]; then
     fi
 
     echo "Creating Work directories"
-    mkdir ~/Apps
     mkdir ~/Personal
-    mkdir -p ~/Work/Code
-    mkdir -p ~/Work/WebApps
+    mkdir -p ~/Code
 
     echo "Install Homestead? (Y/n):"
     read opt
     if [[ ${opt,,} = "y" ]]; then
         vagrant box add laravel/homestead
-        git clone https://github.com/laravel/homestead.git ~/Apps/Homestead
-        bash ~/Apps/Homestead/init.sh
+        git clone https://github.com/laravel/homestead.git /opt/Homestead
+        bash /opt/Homestead/init.sh
     fi
-
-    # Go directory
-    mkdir /opt/go
 
     # Clone dotfiles
     git clone https://github.com/hmatalonga/dotfiles ~/.dotfiles
 
     # Source dot files
-    echo '. ~/.dotfiles/bash/.profile' >> ~/.profile
-    source ~/.profile
+    echo '. ~/.dotfiles/bash/.profile' >> ~/.bashrc
+    source ~/.bashrc
 
     echo "Cleaning setup..."
     sudo apt-get autoremove -y
@@ -241,8 +225,7 @@ elif [[ $mode = "install" ]]; then
 elif [[ $mode = "drivers" ]]; then
     echo "Graphics card drivers go here..."
     sudo apt-get update
-    # VERY IMPORTANT upgrade Xorg to 2.15 at least to avoid crashes
-    # nvidia-current 352
+    sudo apt-get install nvidia-current
 elif [[ $mode = "config" ]]; then
     echo "Changing ownership of /opt..."
     sudo chown $USER:$USER /opt
