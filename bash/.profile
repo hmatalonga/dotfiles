@@ -8,11 +8,7 @@ BASH_SRC_PATH=$DOTFILES_PATH/bash
 . "$BASH_SRC_PATH"/.functions
 
 # System Specific
-if [[ ! "$SSH_TTY" && "$OSTYPE" =~ ^darwin ]]; then
-	. "$BASH_SRC_PATH"/.osx
-else
-	. "$BASH_SRC_PATH"/.ubuntu
-fi
+. "$BASH_SRC_PATH"/.ubuntu
 
 # Android path
 export ANDROID_HOME=/opt/android-sdk-linux

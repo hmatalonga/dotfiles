@@ -15,23 +15,24 @@ alias la="ls -A"
 alias ll="ls -Al"
 alias lt="ls -haltr"
 
-# npm script shortcuts
-alias t="npm test"
-alias s="npm start"
-alias b="npm run build"
-alias d="npm run dev"
-alias dt="npm run dev:test"
-alias ds="npm run dev:ssr"
-alias nr="npm run"
+# yarn script shortcuts
+alias t="yarn test"
+alias s="yarn start"
+alias b="yarn run build"
+alias d="yarn run dev"
+alias li="yarn run lint"
+alias dt="yarn run dev:test"
+alias ds="yarn run dev:ssr"
+alias nr="yarn run"
 
 # blogging shortcuts
-alias ns="npm run dev"
-alias nd="npm run generate && npm run deploy"
-alias blog="cd ~/Personal/blog && code . && npm run dev"
+alias ns="yarn run dev"
+alias nd="yarn run deploy"
+alias blog="cd ~/Personal/blog && code . && yarn run dev"
 
 # npm shortcuts that only list top-level modules
 alias l="yarn list --depth=0 2>/dev/null"
-alias lg="npm list -g --depth=0 2>/dev/null"
+alias lg="yarn list -g --depth=0 2>/dev/null"
 
 # process finding
 alias pg="pgrep -lf"
@@ -51,7 +52,7 @@ alias o="pantheon-files . &"
 # Run a local server
 alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
 
-# Apps shorthands
+# App shorthands
 alias g="git"
 alias top="vtop"
 alias phpunit="vendor/bin/phpunit"
