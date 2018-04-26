@@ -90,7 +90,7 @@ function ff() {
     if [ -z "$1" ]; then
         echo "Missing path"
     else
-        ( chmod -R 775 $1 )
-        ( chmod -R 775 $1/** )
+        ( find $1 -type d -exec chmod 755 {} \; )
+        ( find $1 -type f -exec chmod 644 {} \; )
     fi
 }
