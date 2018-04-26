@@ -4,6 +4,10 @@
 [core]
 	editor = vi
 	excludesfile = ~/.dotfiles/git/.gitignore_global
+[push]
+	default = simple
+[color]
+	ui = true
 [alias]
 	amend = commit -a --amend
 	ec = config --global -e
@@ -16,16 +20,12 @@
 	ds = diff --stat
 	i = init
 	# one-line log
-	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	l = log --pretty=format:'%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%ad %C(auto,green)%aN%C(auto,reset)% s%C(auto,red)% gD% D' --date=short
 	# list aliases
-	la = "!git config -l | grep alias | cut -c 7-"
+	la = !git config -l | grep alias | cut -c 7-
 	rao = remote add origin
 	s = status -s
 	save = !git add -A && git commit -m 'SAVEPOINT'
 	undo = reset HEAD~1 --mixed
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-[push]
-	default = simple
-[color]
-	ui = true
