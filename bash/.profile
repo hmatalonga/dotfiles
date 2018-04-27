@@ -35,9 +35,6 @@ export NVM_DIR="/opt/nvm"
 # phpbrew
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
-# stack autocomplete
-eval "$(stack --bash-completion-script stack)"
-
 # edit this folder
 alias dot="cd ~/.dotfiles"
 # reload
