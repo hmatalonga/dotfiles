@@ -16,8 +16,8 @@ alias ll="ls -Al"
 alias lt="ls -haltr"
 
 # npm/yarn script shortcuts
-alias t="npm test"
-alias s="npm start"
+alias t="yarn test"
+alias s="yarn start"
 alias b="yarn run build"
 alias d="yarn run dev"
 alias li="yarn run lint"
