@@ -23,7 +23,9 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/go/bin
 
 # rustup
-export PATH=$PATH:$HOME/.cargo/bin
+export RUSTUP_HOME=$HOME/.rustup
+export CARGO_HOME=$HOME/.cargo
+export PATH=$PATH:$CARGO_HOME/bin
 
 # JAVA HOME
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
