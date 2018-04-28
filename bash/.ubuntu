@@ -4,7 +4,7 @@
 echo 'Ubuntu profile loaded.'
 
 # set default editor
-export EDITOR='nano -w'
+export EDITOR='vi'
 export VISUAL="$EDITOR"
 
 # enable ls colors
@@ -12,7 +12,6 @@ alias ls="ls --color=auto"
 
 # common places
 alias s="cd /srv"
-alias sk="cd /srv/static/sketch"
 
 # nginx conf shortcut
 alias ngc="sudo nano /etc/nginx/nginx.conf"
@@ -20,9 +19,6 @@ alias ngc="sudo nano /etc/nginx/nginx.conf"
 alias ncc="sudo rm -rf /var/cache/nginx/*"
 # restart nginx
 alias nr="sudo restart nginx"
-
-# show memory usage
-alias mem="sudo python ~/ps_mem.py"
 
 # hint for these shortcuts
 alias hint="echo; cat $BASH_SRC_PATH/.ubuntu_hints; echo; echo; cat $BASH_SRC_PATH/.hints; echo; echo"
