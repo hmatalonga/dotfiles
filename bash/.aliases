@@ -16,23 +16,24 @@ alias ll="ls -Al"
 alias lt="ls -haltr"
 
 # npm/yarn script shortcuts
+alias y="yarn"
 alias t="yarn test"
 alias s="yarn start"
 alias b="yarn run build"
 alias d="yarn run dev"
-alias li="yarn run lint"
+alias yr="yarn run"
+alias yi="yarn run lint"
 alias dt="yarn run dev:test"
 alias ds="yarn run dev:ssr"
-alias nr="yarn run"
 
 # blogging shortcuts
 alias ns="yarn run dev"
 alias nd="yarn run deploy"
 alias blog="cd ~/Personal/blog && code . && yarn run dev"
 
-# npm shortcuts that only list top-level modules
-alias l="yarn list --depth=0 2>/dev/null"
-alias lg="yarn list -g --depth=0 2>/dev/null"
+# npm/yarn shortcuts that only list top-level modules
+alias l="npm list --depth=0 2>/dev/null"
+alias lg="yarn global list 2>/dev/null"
 
 # process finding
 alias pg="pgrep -lf"

@@ -11,28 +11,31 @@ BASH_SRC_PATH=$DOTFILES_PATH/bash
 . "$BASH_SRC_PATH"/.ubuntu
 
 # Android path
-export ANDROID_HOME=/opt/android-sdk-linux
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools
+export ANDROID_HOME="/opt/android-sdk-linux"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools"
 
 # Composer
-export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # golang
-mkdir -p $HOME/.go
-export GOPATH=$HOME/.go
-export PATH=$PATH:/usr/local/go/bin
+mkdir -p "$HOME/.go"
+export GOPATH="$HOME/.go"
+export PATH="$PATH:/usr/local/go/bin"
 
 # rustup
-export RUSTUP_HOME=$HOME/.rustup
-export CARGO_HOME=$HOME/.cargo
-export PATH=$PATH:$CARGO_HOME/bin
+export RUSTUP_HOME="$HOME/.rustup"
+export CARGO_HOME="$HOME/.cargo"
+export PATH="$PATH:$CARGO_HOME/bin"
 
 # JAVA HOME
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
+# nvm and yarn
 export NVM_DIR="/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:`yarn global bin`"
 
 # phpbrew
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc

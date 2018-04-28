@@ -35,27 +35,23 @@ elif [[ $mode = "install" ]]; then
 
     # Install nvm
     echo "Installing nvm..."
-    mkdir /opt/nvm
+    mkdir -p /opt/nvm
+    export NVM_DIR="/opt/nvm"
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-    nvm install stable
-    nvm alias default stable
+    nvm install --lts
 
-    # Centralize global npm packages for different node versions
-    echo "prefix = /opt/nvm" > ~/.npmrc
-
+    curl -o- -L https://yarnpkg.com/install.sh | bash
     # Install Node modules
     modules=(
         np
-        yarn
         vtop
         surge
-        eslint
         vue-cli
         gitbook-cli
     )
 
     echo "installing node modules..."
-    npm install -g ${modules[@]}
+    yarn global add ${modules[@]}
 
     echo "Installing Ubuntu restricted extras..."
     sudo apt-get install -y ubuntu-restricted-extras
