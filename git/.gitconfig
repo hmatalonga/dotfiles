@@ -9,8 +9,11 @@
 [color]
 	ui = true
 [alias]
+	a = add
+	aa = add -A
 	amend = commit -a --amend
 	ec = config --global -e
+	c = commit -m
 	cl = clone
 	cm = !git add -A && git commit -m
 	co = checkout
@@ -24,6 +27,7 @@
 	# list aliases
 	la = !git config -l | grep alias | cut -c 7-
 	rao = remote add origin
+	reset = !git reset --hard && git clean -df
 	s = status -s
 	save = !git add -A && git commit -m 'SAVEPOINT'
 	undo = reset HEAD~1 --mixed
