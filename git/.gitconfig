@@ -30,7 +30,7 @@
 	reset = !git reset --hard && git clean -df
 	s = status -s
 	save = !git add -A && git commit -m 'SAVEPOINT'
-	sync = !git fetch upstream && git merge upstream/master
+	sync = "!s() { git fetch upstream && git merge upstream/${1-master}; }; s"
 	undo = reset HEAD~1 --mixed
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
