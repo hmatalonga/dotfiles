@@ -47,7 +47,6 @@ elif [[ $mode = "install" ]]; then
         vtop
         surge
         vue-cli
-        gitbook-cli
     )
 
     echo "installing node modules..."
@@ -64,6 +63,12 @@ elif [[ $mode = "install" ]]; then
 
         sudo apt-get install -y oracle-java8-installer
         sudo apt-get install -y oracle-java8-set-default
+    fi
+
+    echo "Install OCaml? (Y/n)"
+    read opt
+    if [[ ${opt,,} = "y" ]]; then
+        wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
     fi
 
     echo "Install Software pack? (Y/n):"

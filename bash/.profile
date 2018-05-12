@@ -40,6 +40,9 @@ export PATH="$PATH:$HOME/.yarn/bin"
 # phpbrew
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
+# opam
+source $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
 # edit this folder
 alias dot="cd ~/.dotfiles"
 # reload
