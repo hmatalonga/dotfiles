@@ -20,7 +20,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 # golang
 mkdir -p "$HOME/.go"
 export GOPATH="$HOME/.go"
-export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
 # rustup
 export RUSTUP_HOME="$HOME/.rustup"
@@ -35,13 +35,20 @@ export NVM_DIR="/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 # phpbrew
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 # opam
 source $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+
+# spark and hadoop
+export SPARK_HOME="/opt/spark"
+export HADOOP_HOME="/opt/hadoop"
+
+export PATH="$PATH:$SPARK_HOME/bin:$HADOOP_HOME/bin"
 
 # edit this folder
 alias dot="cd ~/.dotfiles"
