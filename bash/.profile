@@ -43,13 +43,6 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 # opam
 source $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-
-# spark and hadoop
-export SPARK_HOME="/opt/spark"
-export HADOOP_HOME="/opt/hadoop"
-
-export PATH="$PATH:$SPARK_HOME/bin:$HADOOP_HOME/bin"
-
 # edit this folder
 alias dot="cd ~/.dotfiles"
 # reload
