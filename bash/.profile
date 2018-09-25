@@ -30,6 +30,9 @@ export PATH="$PATH:$CARGO_HOME/bin"
 # JAVA HOME
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
+# ANTLR
+export CLASSPATH=".:/opt/antlr-4.7.1-complete.jar:$CLASSPATH"
+
 # nvm and yarn
 export NVM_DIR="/opt/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
