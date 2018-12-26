@@ -43,6 +43,7 @@ alias lookdevices="sudo nmap -sP 192.168.1.0/24"
 
 # Homestead vm aliases
 alias vm="homestead ssh"
+alias vmc="homestead ssh -c $*"
 alias vup="vagrant up"
 alias hup="homestead up"
 
