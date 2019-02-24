@@ -15,24 +15,23 @@ alias la="ls -A"
 alias ll="ls -Al"
 alias lt="ls -haltr"
 
-# npm/yarn script shortcuts
-alias t="yarn test"
-alias s="yarn start"
-alias b="yarn run build"
-alias d="yarn run dev"
-alias yr="yarn run"
-alias yi="yarn run lint"
-alias dt="yarn run dev:test"
-alias ds="yarn run dev:ssr"
+# npm/npm script shortcuts
+alias t="npm test"
+alias s="npm start"
+alias b="npm run build"
+alias d="npm run dev"
+alias yr="npm run"
+alias yi="npm run lint"
+alias dt="npm run dev:test"
+alias ds="npm run dev:ssr"
 
 # blogging shortcuts
-alias ns="yarn run dev"
-alias nd="yarn run deploy"
-alias blog="cd ~/Personal/blog && code . && yarn run dev"
+alias ns="npm run dev"
+alias nd="npm run deploy"
+alias blog="cd ~/Personal/blog && code . && npm run dev"
 
-# npm/yarn shortcuts that only list top-level modules
+# npm shortcuts that only list top-level modules
 alias l="npm list --depth=0 2>/dev/null"
-alias lg="yarn global list 2>/dev/null"
 
 # process finding
 alias pg="pgrep -lf"
@@ -55,7 +54,5 @@ alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
 
 # App shorthands
 alias g="git"
-alias top="vtop"
-alias phpunit="vendor/bin/phpunit"
 alias art="php artisan"
 alias copy="xsel -ib"

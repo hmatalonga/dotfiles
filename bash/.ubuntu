@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Configs for my VPS
-echo 'Ubuntu profile loaded.'
-
 # set default editor
 export EDITOR='vi'
 export VISUAL="$EDITOR"
