@@ -56,3 +56,6 @@ alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
 alias g="git"
 alias art="php artisan"
 alias copy="xsel -ib"
+
+# Docker
+alias dnpm=" docker run -v "$PWD":/usr/src/app -w /usr/src/app node:alpine sh -c 'npm $1'"
