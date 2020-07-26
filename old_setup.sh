@@ -1,36 +1,22 @@
 #!/usr/bin/env bash
 
+# Before running this script:
+# sudo chown -R hugo /usr/local
+
 mode=$1
 distro=$(lsb_release -cs)
 
 if [[ $mode = "init" ]]; then
-    mkdir -p ~/.ssh && chmod 700 ~/.ssh
-
-    touch ~/.ssh/config
-    echo "ForwardAgent yes\nForwardX11 yes" >> ~/.ssh/config
-    
-    chmod 600 ~/.ssh/config
-    chmod 600 ~/.ssh/id_rsa*
-
-    eval $(ssh-agent -s)
-    ssh-add ~/.ssh/id_rsa
-
     # make in case they aren't already there
     mkdir -p "/usr/local/lib"
     mkdir -p "/usr/local/bin"
 
     # update the system
-    sudo apt update
-    sudo apt full-upgrade -y
+    sudo apt-get update
+    sudo apt-get upgrade -y
+    sudo apt-get dist-upgrade -y
 
     # reboot afterwards
-    sudo reboot
-elif [[ $mode = "ansible" ]]; then
-    sudo apt install software-properties-common
-    sudo apt-add-repository --yes --update ppa:ansible/ansible
-    sudo apt install ansible
-    sudo apt install python-argcomplete
-    sudo activate-global-python-argcomplete
 elif [[ $mode = "install" ]]; then
     mkdir ~/tmp
     sudo apt-get update

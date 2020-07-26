@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# make aliases sudo-able
-alias sudo="sudo "
-
 # directory navigation
 alias ~="cd ~"
 alias ..="cd .."
@@ -14,21 +11,6 @@ alias .....="cd ../../../.."
 alias la="ls -A"
 alias ll="ls -Al"
 alias lt="ls -haltr"
-
-# npm/npm script shortcuts
-alias t="npm test"
-alias s="npm start"
-alias b="npm run build"
-alias d="npm run dev"
-alias yr="npm run"
-alias yi="npm run lint"
-alias dt="npm run dev:test"
-alias ds="npm run dev:ssr"
-
-# blogging shortcuts
-alias ns="npm run dev"
-alias nd="npm run deploy"
-alias blog="cd ~/Personal/blog && code . && npm run dev"
 
 # npm shortcuts that only list top-level modules
 alias l="npm list --depth=0 2>/dev/null"
@@ -46,16 +28,10 @@ alias vmc="homestead ssh -c $*"
 alias vup="vagrant up"
 alias hup="homestead up"
 
-# open current folder from terminal
-alias o="pantheon-files . &"
-
 # Run a local server
-alias server="browse http://localhost:8000 && python -m SimpleHTTPServer"
+alias server="browse http://localhost:9000 && python -m SimpleHTTPServer"
 
 # App shorthands
 alias g="git"
 alias art="php artisan"
 alias copy="xsel -ib"
-
-# Docker
-alias dnpm=" docker run -v "$PWD":/usr/src/app -w /usr/src/app node:alpine sh -c 'npm $1'"

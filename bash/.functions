@@ -94,3 +94,7 @@ function ff() {
         ( find $1 -type f -exec chmod 644 {} \; )
     fi
 }
+
+function dnpm() {
+    (  docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:alpine sh -c "npm $*" )
+}

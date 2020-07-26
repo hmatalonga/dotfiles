@@ -10,12 +10,5 @@ alias ls="ls --color=auto"
 # common places
 alias s="cd /srv"
 
-# nginx conf shortcut
-alias ngc="sudo nano /etc/nginx/nginx.conf"
-# clean nginx cache
-alias ncc="sudo rm -rf /var/cache/nginx/*"
-# restart nginx
-alias nr="sudo restart nginx"
-
 # hint for these shortcuts
 alias hint="echo; cat $BASH_SRC_PATH/.ubuntu_hints; echo; echo; cat $BASH_SRC_PATH/.hints; echo; echo"

@@ -10,27 +10,19 @@ BASH_SRC_PATH=$DOTFILES_PATH/bash
 # System Specific
 . "$BASH_SRC_PATH"/.ubuntu
 
+export PATH="$PATH:/home/hugo/.local/bin"
+
 # Android path
 export ANDROID_HOME="/opt/android-sdk-linux"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools"
-
-# flutter
-export PATH="$PATH:/opt/flutter/bin"
 
 # golang
 export GOPATH="$HOME/.go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
-# rustup
-# export RUSTUP_HOME="$HOME/.rustup"
-# export CARGO_HOME="$HOME/.cargo"
-# export PATH="$PATH:$CARGO_HOME/bin"
-
 # JAVA HOME
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
-# export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
-
-# nvm
+export JAVA_VERSION=11
+export JAVA_HOME="/usr/lib/jvm/java-$JAVA_VERSION-openjdk-amd64/"
 
 # edit this folder
 alias dot="cd ~/.dotfiles"
