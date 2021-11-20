@@ -231,7 +231,7 @@ elif [[ $mode = "install" ]]; then
     git clone https://github.com/hmatalonga/dotfiles ~/.dotfiles
 
     # Source dot files
-    echo '. ~/.dotfiles/bash/.profile' >> ~/.bashrc
+    echo '. "$HOME/.dotfiles/bash/.profile"' >> ~/.bashrc
     source ~/.bashrc
 
     echo "Cleaning setup..."
