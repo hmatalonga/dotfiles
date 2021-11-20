@@ -10,8 +10,6 @@ BASH_SRC_PATH=$DOTFILES_PATH/bash
 # System Specific
 . "$BASH_SRC_PATH"/.ubuntu
 
-export PATH="$PATH:/home/hugo/.local/bin"
-
 # Android path
 # export ANDROID_HOME="/opt/android-sdk-linux"
 # export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools"
