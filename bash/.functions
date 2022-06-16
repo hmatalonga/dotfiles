@@ -105,7 +105,7 @@ function backup_folder() {
 }
 
 function remote_backup() {
-    ( rsync -arvh --progress --stats --exclude-from='$DOTFILES_PATH/.backup_exclude_list.txt' "$1" hostgator:/home1/jmmsoft/backup/ )
+    ( rsync -arvh --progress --stats --exclude-from="$DOTFILES_PATH/.backup_exclude_list.txt" "$1" hostgator:/home1/jmmsoft/backup/ )
 }
 
 _maestral_completion() {
