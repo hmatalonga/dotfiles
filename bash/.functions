@@ -101,11 +101,11 @@ function dnpm() {
 
 
 function backup_folder() {
-    ( 7z a -xr@$HOME/.7z_exclude_list.txt $(basename $1).7z $1 )
+    ( 7z a -xr@$DOTFILES_PATH/.backup_exclude_list.txt $(basename $1).7z $1 )
 }
 
 function remote_backup() {
-    ( rsync -arvh --progress --stats --exclude-from='/home/hugo/.7z_exclude_list.txt' "$1" hostgator:/home1/jmmsoft/backup/ )
+    ( rsync -arvh --progress --stats --exclude-from='$DOTFILES_PATH/.backup_exclude_list.txt' "$1" hostgator:/home1/jmmsoft/backup/ )
 }
 
 _maestral_completion() {
