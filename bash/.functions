@@ -99,6 +99,11 @@ function dnpm() {
     (  docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:alpine sh -c "npm $*" )
 }
 
+
+function backup_folder() {
+    ( 7z a -xr@$HOME/.7z_exclude_list.txt $(basename $1).7z $1 )
+}
+
 _maestral_completion() {
     local IFS=$'\n'
     local response
