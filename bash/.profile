@@ -11,12 +11,15 @@ BASH_SRC_PATH=$DOTFILES_PATH/bash
 . "$BASH_SRC_PATH"/.ubuntu
 
 # Android path
-# export ANDROID_HOME="/opt/android-sdk-linux"
-# export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools"
+export ANDROID_SDK_ROOT="/opt/android-sdk"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools"
 
 # golang
 # export GOPATH="$HOME/.go"
 # export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+
+# Solana
+export PATH="$PATH:/home/hugo/.local/share/solana/install/active_release/bin"
 
 # JAVA HOME
 export JAVA_VERSION=11

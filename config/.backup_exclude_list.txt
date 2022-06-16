@@ -1,0 +1,9 @@
+.git/
+.cache/
+.gradle/
+.ipynb_checkpoints/
+__pycache__/
+node_modules/
+env/
+vendor/
+data/raw
