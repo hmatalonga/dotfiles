@@ -24,10 +24,3 @@ export PATH="$PATH:/home/hugo/.local/share/solana/install/active_release/bin"
 # JAVA HOME
 export JAVA_VERSION=11
 export JAVA_HOME="/usr/lib/jvm/java-$JAVA_VERSION-openjdk-amd64/"
-
-# edit this folder
-alias dot="cd ~/.dotfiles"
-# reload
-alias rl="source ~/.bashrc; echo '~/.bashrc reloaded.'"
-# reset repo folder
-alias rt="rm -rf ~/.dotfiles; git clone git@github.com:hmatalonga/dotfiles.git ~/.dotfiles; source ~/.bashrc"
