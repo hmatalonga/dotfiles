@@ -5,5 +5,7 @@
 __pycache__/
 node_modules/
 env/
+venv/
 vendor/
-data/raw
+data/
+*.iso

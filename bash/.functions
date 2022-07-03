@@ -101,7 +101,7 @@ function dnpm() {
 
 
 function backup_folder() {
-    ( 7z a -xr@$DOTFILES_PATH/.backup_exclude_list.txt $(basename $1).7z $1 )
+    ( 7z a -xr@$DOTFILES_PATH/config/.backup_exclude_list.txt $(basename $1).7z $1 )
 }
 
 function remote_backup() {
